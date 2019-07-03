@@ -203,7 +203,7 @@ return true;
 
 以上就是此项目中的所有关键点。
 
-# 参考地址
+# 参考文章
 [RecycleViewCardGallary](https://p.codekk.com/detail/5a1f994bfd1c9b26e2fca12a)
 
 
