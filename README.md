@@ -1,4 +1,6 @@
 # ScrollViewDemo
+#博客地址 
+[android 卡片画廊效果及RecycleView、ViewPager、ScrollView之前的冲突解决](https://www.jianshu.com/p/71f7cda65ec9)
 #话不多说，看图
 ![图片.gif](https://upload-images.jianshu.io/upload_images/12113295-7e03a540e5b1ea7b.gif?imageMogr2/auto-orient/strip)
 
