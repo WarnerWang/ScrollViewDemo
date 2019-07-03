@@ -1,21 +1,21 @@
 # ScrollViewDemo
-#博客地址 
+# 博客地址 
 [android 卡片画廊效果及RecycleView、ViewPager、ScrollView之前的冲突解决](https://www.jianshu.com/p/71f7cda65ec9) 如果效果图出不来请看博客
 
-#话不多说，看图
+# 话不多说，看图
 ![图片.gif](https://upload-images.jianshu.io/upload_images/12113295-7e03a540e5b1ea7b.gif?imageMogr2/auto-orient/strip)
 
-#层级结构图
+# 层级结构图
 ![image.png](https://upload-images.jianshu.io/upload_images/12113295-8250909f82ebd47f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-##层级结构初衷
+## 层级结构初衷
 1、内容需要通过卡片的形式来展现，还有支持加载更多，所以最底部使用RecyclerView，最好是做成预加载形式，提前n页加载下一页，这样体验更好。
 2、为了展示更多内容卡片内要支持垂直分页，这时候我使用了ViewPager，一是可以更好的管理分页内容，二是ViewPager的垂直分页容易实现，三是可以处理不同控件之前的滑动冲突
 3、ViewPager第一页使用的可回弹的ScrollView，可以在下拉的时候做一些动画之类的操作，例如关注操作等。
 4、ViewPager的第二页只是一个普通的ScrollView，具体使用可以根据实际情况来处理
 
 
-##关键点
+## 关键点
 1、RecycleView的分页效果基于PagerSnapHelper，RecyclerView在25.1.0版本中添加了一盒基于SnapHelper的子类PagerSnapHelper，可以使RecyclerView像ViewPager一样的效果，一次只能滑一页，而且居中显示。
 ```
 /**
@@ -193,7 +193,7 @@ return intercepted;
 ```
 以上就是此项目中的所有关键点。
 
-#参考地址
+# 参考地址
 [RecycleViewCardGallary](https://p.codekk.com/detail/5a1f994bfd1c9b26e2fca12a)
 
 
