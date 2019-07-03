@@ -191,6 +191,16 @@ swapXY(event); // return touch coordinates to original reference frame for any c
 return intercepted;
 }
 ```
+
+6、解决ViewPager与BounceScrollView的冲突，在下拉过程中有时会被ViewPager拦截
+```
+// 指定此视图可以垂直滚动
+@Override
+public boolean canScrollVertically(int direction) {
+return true;
+}
+```
+
 以上就是此项目中的所有关键点。
 
 # 参考地址
