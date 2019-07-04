@@ -78,13 +78,22 @@ public class CardAdapter extends BaseQuickAdapter<CardBean, CardAdapter.ViewPage
     }
 
     @Override
-    protected void convert(ViewPagerViewHolder helper, CardBean item) {
+    protected void convert(final ViewPagerViewHolder helper, final CardBean item) {
         helper.refreshData(item);
-        addOnChildClickListener(helper.backView, item, helper);
+//        addOnChildClickListener(helper.oneHolder.imageView, item, helper);
+        helper.oneHolder.scrollView.setOnBounceChanged(new BounceScrollView.OnBounceChanged() {
+            @Override
+            public void onBounceChanged(boolean isMoved, int offset) {
+                if (onItemBounceChanged != null) {
+                    onItemBounceChanged.onItemBounceChanged(isMoved, offset, null, item,helper);
+                }
+            }
+        });
+
     }
 
 
-    // 添加子视图点击事件的监听，因为在viewPager中拦截了事件，所以需要自己添加点击事件监听
+    // 添加子视图点击事件的监听，因为重写了onCreateViewHolder方法，导致之前的BaseViewHolder中添加事件的方法无效，所以需要自己添加点击事件监听
     private void addOnChildClickListener(final View view, final CardBean item, final ViewPagerViewHolder helper) {
         final CardAdapter adapter = this;
         view.setOnClickListener(new View.OnClickListener() {

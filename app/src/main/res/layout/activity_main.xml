@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#1a000000">
+    android:background="#1a000000"
+    android:orientation="vertical">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycle_view"
@@ -19,5 +20,31 @@
 
     </android.support.v7.widget.RecyclerView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/scroll_to_page"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="滑动到第10页"
+            android:layout_marginLeft="15dp"
+            android:textSize="20dp"/>
+
+
+        <TextView
+            android:id="@+id/page_info"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="第1页"
+            android:paddingHorizontal="10dp"
+            android:gravity="center"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
